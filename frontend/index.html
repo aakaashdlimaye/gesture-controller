@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gesture Controller</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">✋ Gesture Controller</h1>
+      <span id="fps-counter" class="fps">-- FPS</span>
+    </header>
+
+    <!-- Webcam feed -->
+    <div class="video-container">
+      <img id="video-feed" src="" alt="Webcam feed inactive" class="video-feed" />
+      <div id="video-overlay" class="video-overlay">Camera inactive — click Start</div>
+    </div>
+
+    <!-- Main grid -->
+    <main class="grid">
+
+      <!-- Gesture card -->
+      <section class="card gesture-card">
+        <h2 class="card-title">Current Gesture</h2>
+        <div id="gesture-name" class="gesture-name">NONE</div>
+        <div class="confidence-row">
+          <span class="label">Confidence</span>
+          <div class="confidence-track">
+            <div id="confidence-fill" class="confidence-fill" style="width:0%"></div>
+          </div>
+          <span id="confidence-pct" class="label">0%</span>
+        </div>
+      </section>
+
+      <!-- Status card -->
+      <section class="card status-card">
+        <h2 class="card-title">System Status</h2>
+        <div class="status-row">
+          <span class="label">Active App</span>
+          <span id="active-app" class="value">unknown</span>
+        </div>
+        <div class="status-row">
+          <span class="label">Last Action</span>
+          <span id="last-action" class="value highlight">none</span>
+        </div>
+        <div class="status-row">
+          <span class="label">Webcam</span>
+          <span id="webcam-status" class="value">inactive</span>
+        </div>
+      </section>
+
+      <!-- Mode switcher -->
+      <section class="card mode-card">
+        <h2 class="card-title">Mode</h2>
+        <div class="mode-buttons">
+          <button class="mode-btn active" data-mode="auto">Auto</button>
+          <button class="mode-btn" data-mode="volume">Volume</button>
+          <button class="mode-btn" data-mode="slides">Slides</button>
+          <button class="mode-btn" data-mode="cursor">Cursor</button>
+        </div>
+      </section>
+
+      <!-- Controls -->
+      <section class="card controls-card">
+        <h2 class="card-title">Controls</h2>
+        <div class="control-buttons">
+          <button id="start-btn" class="control-btn start">Start</button>
+          <button id="stop-btn" class="control-btn stop" disabled>Stop</button>
+        </div>
+        <div id="connection-status" class="connection-status disconnected">Disconnected</div>
+      </section>
+
+      <!-- Log feed -->
+      <section class="card log-card">
+        <h2 class="card-title">Action Log</h2>
+        <div id="log-feed" class="log-feed">
+          <div class="log-empty">No actions yet...</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

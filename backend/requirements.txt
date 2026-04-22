@@ -1,0 +1,23 @@
+# Core vision
+mediapipe==0.10.33
+opencv-python==4.10.0.84
+
+# API server
+fastapi==0.115.14
+uvicorn==0.34.3
+
+# AI agent
+groq==0.13.0
+
+# System control
+pyautogui==0.9.54
+python-dotenv==1.1.0
+protobuf==4.25.3
+
+# Windows-only system control
+pycaw==20230407; sys_platform == "win32"
+pygetwindow==0.0.9; sys_platform == "win32"
+comtypes==1.4.8; sys_platform == "win32"
+
+# Testing
+httpx==0.28.1
